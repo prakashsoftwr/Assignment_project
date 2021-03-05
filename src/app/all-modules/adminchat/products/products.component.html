@@ -1,0 +1,71 @@
+		<!-- Page Wrapper -->
+        <div class="page-wrapper">
+
+            <div class="content container-fluid">
+                <div class="page-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="page-title">Product</h3>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Product cart</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row staff-grid-row">
+                  <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3" *ngFor="let product of _productData;let i = index">
+                      <div class="profile-widget">
+                          <div class="profile-img">
+                              <img src="{{product.img}}" alt="" class="card-img-top" style="width: 40px;height:50;">
+                          </div>
+                          <h4 class="user-name m-t-10 mb-0 text-ellipsis"><a
+                                  routerLink="/employees/employeeprofile">{{product.p_name}}</a>
+                          </h4>
+                          <div class="small text-muted">Cost:{{product.p_cost |  currency:'INR'}}</div>
+                          <p class="card-text">Stock:{{product.p_availability | number}}</p>
+                          <p class="card-text">Time:{{product.p_details.preparation_time}}</p>
+                      </div>
+                  </div>
+              </div>
+                <!-- <div class="form-group row" *ngFor="let product of _productData">
+                  <div class="col-md-12">
+                  <div class="col-md-4">
+                  <div class="card" style="width: 16rem;">
+                    <img src="{{product.img}}" class="card-img-top">
+                    <div class="card-body">
+                      <h3 class="card-title">{{product.p_name}}</h3>
+                      <p class="card-text">Cost:{{product.p_cost |  currency:'INR'}}</p>
+                      <p class="card-text">Stock:{{product.p_availability | number}}</p>
+                      <p class="card-text">Time:{{product.p_details.preparation_time}}</p>
+                    </div>
+                </div>
+              </div>
+              </div>
+            </div> -->
+        </div>
+      </div>
+        <!-- /Page Wrapper -->
+
+
+        <div id="drag_files" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-md modal-dialog-centered">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title">Delivery time</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                      <form id="js-upload-form">
+                          <div class="upload-drop-zone" id="drop-zone">
+                              <i class="fa fa-cloud-upload fa-2x"></i> <span class="upload-text">Just drag and
+                                  drop files here</span>
+                          </div>
+                      </form>
+                      <div class="text-center mt-0">
+                          <button class="btn newgroup_create m-0" data-dismiss="modal">Add to upload</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
